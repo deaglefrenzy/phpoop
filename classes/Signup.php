@@ -12,7 +12,7 @@ class Signup extends Dbh
 
     private function insertUser()
     {
-        $query = "INSERT INTO users ('username', 'password') VALUES (:username, :pwd);";
+        $query = "INSERT INTO users (username, password, email) VALUES (:username, :pwd, 'testemail@test.com');";
         $stmt = parent::connect()->prepare($query);
         $stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":pwd", $this->pwd);
